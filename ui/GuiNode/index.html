@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>node connector</title>
+    <link rel='stylesheet' href='./jquery-ui-smooth.css'>
+    <link rel='stylesheet' href='./nodeGui.css'>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section class="layout">
+        <div class="graph" id="canvas">
+            <section class="blayout">
+            <div>
+                <label for="beams">Choose a Beam type</label>
+                <select id="beams" name="beamType">
+                    <option value="">
+                        选择梁的类型
+                    </option>
+                    <option value="钢混叠合梁">
+                        钢混叠合梁
+                    </option>
+                    <option value="搭板">
+                        搭板
+                    </option>
+                    <!-- <option value="H2.5连续T梁">
+                        H2.5连续T梁
+                    </option>
+                    <option value="简支H2.5T梁">
+                        简支H2.5T梁
+                    </option>
+                    <option value="简支H2.0T梁">
+                        简支H2.0T梁
+                    </option>
+                    <option value="H1.7连续梁">
+                        H1.7连续梁
+                    </option>
+                    <option value="22m叠合T梁">
+                        22m叠合T梁
+                    </option>
+                    <option value="16m叠合梁">
+                        16m叠合梁
+                    </option>
+                    <option value="矮T梁LY">
+                        矮T梁LY
+                    </option>
+                    <option value="矮T梁Lz">
+                        矮T梁LZ
+                    </option>
+                    <option value="矮T梁L1">
+                        矮T梁L1
+                    </option> -->
+                </select>
+            </div>
+
+            <div>
+                <label for="partition">Choose a part of beam</label>
+                <select id="partition" name="part">
+                </select>
+            </div>
+
+            <div>
+
+                <label for="content">Choose a content</label>
+                <select id="content" name="partContent">
+
+                </select>
+            </div>
+
+
+                <button id="insert" onclick="insert()">插入</button>
+                <button id="del" onclick="deleteSelected()">刪除</button>
+                <button id="amp" onclick="AmplifierConnector()">放大器</button>
+                <button id="cont" onclick="GenConnecter()">集线器</button>
+                <button id="gather" onclick="GatherDataToServer()">上传数据</button>
+
+                <button id="test" onclick="downLoadBeam()">下载标准梁</button>
+                <select id="BeamID" name="Beams">
+                    <option value="">选择标准类型</option>
+                </select>
+                <button id="tt" onclick="addBeamData()">添加梁类型</button>
+                <button id="ttd" onclick="GatherToBeamTable()">上传梁类型数据</button>
+                <button id="ttd" onclick="clearAll()">清空</button>
+            </section>
+        </div>
+        <div class="search" style="display: flex;flex-direction: column;gap: 16px;">
+            <select id="unit">
+                <option value="">选择桥梁</option>
+            </select>
+            <select id="unit2">
+                <option value="左幅">左幅</option>
+            </select>
+            <select id="part">
+                <option value="基础及下部构造">基础及下部构造</option>
+            </select>
+            <select id="part2">
+                <option value="3#墩">3#墩</option>
+            </select>
+            <select id="proj">
+                <option value="钻孔灌注桩">钻孔灌注桩</option>
+            </select>
+            <button id="gen" onclick="addPureReceiver()">生成</button>
+        </div>
+    </section>
+    <script src='jquery.min.js'></script>
+    <script src='jquery-ui.min.js'></script>
+    <script src='./nodeGui.js'></script>
+    <script src="./script.js"></script>
+</body>
+</html>

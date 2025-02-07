@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>wxhcq--push template to database</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="row">
+  <span>
+    <input class="swing" id="Beam" type="text" placeholder="Type of Beam" /><label for="artist" style="background-color: darkkhaki;">BI</label>
+  </span>
+  <span>
+    <input class="swing" id="Part" type="text" placeholder="part of proj" /><label for="song" style="background-color: deepskyblue;">PA</label>
+  </span>
+  <span>
+    <input class="swing" id="Extra" type="text" placeholder="extra info" /><label for="eyes" style="background-color: coral;">EX</label>
+  </span>
+  <button class="swing" onclick="hunter()" style="background-color: darkcyan;font-weight: 200;color:aliceblue;font-size: larger;">
+  Select    
+  </button>
+  <button class="swing" onclick="send()" style="background-color: darkcyan;font-weight: 200;color:aliceblue;font-size: larger;">
+    Push    
+    </button>
+</div>
+<!-- partial -->
+<script src="../../js/utils.js"></script>
+<script src="../../js/range.js"></script>
+<script src="../../js/connect.js"></script>
+<script src="../../js/calculate.js"></script>
+<script src="./script.js"></script>
+
+</body>
+</html>

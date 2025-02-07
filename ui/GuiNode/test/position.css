@@ -1,0 +1,41 @@
+.container {
+    width: 80vw;
+    height: 90vh;
+    background-color: blanchedalmond;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+#d1 {
+    display: inline;
+    font-size: larger;
+    font-stretch: ultra-expanded;
+    text-align: center;
+    background-color: blue;
+    margin: 5px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+
+.paragraph {
+    text-align: center;
+    font-size: small;
+    background-color: cadetblue;
+    color: blue;
+    border-radius: 2px;
+}
+
+#d2 {
+    display: inline;
+    font-size: larger;
+    font-stretch: ultra-expanded;
+    text-align: center;
+    background-color: blue;
+    margin: 5px;
+    position: relative;
+    top: 5%;
+    left: 10px;
+}

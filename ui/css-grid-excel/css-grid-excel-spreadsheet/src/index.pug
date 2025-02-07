@@ -1,0 +1,85 @@
+.main-content
+	.title Book1 - Excel
+	.menu-bar
+		each val, index in ['File','Home', 'Insert', 'Page Layout', 'Formulas','Data', 'Review', 'View', 'Help']
+			div
+				span= val
+	.icon-bar
+		.icon-bar__clipboard
+			.icon-paste
+				.icon
+				span Paste
+			.icon.icon-cut
+			.icon.icon-copy
+			.icon-bar__name Clipboard
+		.icon-bar__font
+			select.font-name
+				option(selected) Noto Sans
+				each val, index in ['Arial', 'Calibri', 'Comic Sans MS', 'Courier New', 'Impact', 'Georgia', 'Garamond', 'Lato','Open Sans','Palatino', 'Verdana']
+					option(style="--font:"+val)= val
+			select.font-size
+				option(selected) 14
+				each val, index in ['16', '18','20','22', '24','26','28','36','48','72']
+					option= val
+			each val, index in ['bold','italic','underline', 'border','fill','color']
+				div(class='icon icon-'+val)
+			.icon-bar__name Font
+		.icon-bar__alignment
+			each val, index in ['alignt','alignm','alignb', 'orientation','alignl','alignc','alignr','indentinc','indentdec']
+				div(class='icon icon-'+val)
+			.wrap-text
+				.icon
+				span Wrap Text
+			.merge-center
+				.icon
+				span Merge & Center
+			.icon-bar__name Alignment
+		.icon-bar__number
+			select.number-format
+				each val, index in ['General','Number','Currency', 'Accounting','Short Date', 'Long Date','Time','Currency','Percentage']
+					option= val
+			each val, index in ['acc','percent','comma', 'decimalinc','decimaldec']
+				div(class='icon icon-'+val)
+			.icon-bar__name Number
+		.icon-bar__styles
+			.conditional
+				.icon
+			.format-table
+				.icon
+			.cell-style
+				.icon
+			.icon-desc Conditional Formatting
+			.icon-desc Format as Table
+			.icon-desc Cell Styles
+			.icon-bar__name Styles
+		.icon-bar__cells
+			.cell-insert 
+				.icon
+			.cell-delete
+				.icon
+			.cell-format
+				.icon
+			.icon-desc Insert
+			.icon-desc Delete
+			.icon-desc Format
+			.icon-bar__name Cells
+	.cell-content
+		div fx
+		div
+	.cells
+		.cells__spacer
+		each val, index in ['A','B','C', 'D','E','F','G','H','I','J','K']
+			.cells__alphabet= val
+		- for (var i=1; i<21; i++)
+			.cells__number= i
+		- for (var i=0; i<214; i++)
+			input.cells__input
+		input.input__explanation(value="Part of the CSS Grid Collection 👉🏻")
+		div.input__see-more
+			a(href="https://codepen.io/collection/DQvYpQ/" target="_blank") Click here!
+		div.input__sm-1
+			a(href="https://twitter.com/meowlivia_" target="_blank") Twitter
+		div.input__sm-2
+			a(href="https://github.com/oliviale" target="_blank") GitHub
+		div.input__sm-3
+			a(href="https://dribbble.com/oliviale" target="_blank") Dribbble

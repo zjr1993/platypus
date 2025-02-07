@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>part connector</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<section class="layout">
+    <div class="search" style="display: flex;flex-direction: column;gap: 16px;">
+        <select id="unit">
+            <option value="">选择桥梁</option>
+        </select>
+        <select id="unit2">
+            <option value="左幅">左幅</option>
+        </select>
+        <select id="part">
+            <option value="基础及下部构造">基础及下部构造</option>
+        </select>
+        <select id="part2">
+            <option value="3#墩">3#墩</option>
+        </select>
+        <select id="proj">
+            <option value="钻孔灌注桩">钻孔灌注桩</option>
+        </select>
+        <button id="gen" onclick="addPureReceiver()">连接</button>
+    </div>
+</section>
+<script src="./script.js"></script>
+</body>
+</html>

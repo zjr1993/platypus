@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "阿里妈妈灵动体 VF Thin";src: url("//at.alicdn.com/wf/webfont/ligWXLbDvDeG/FTBTPXmKBvv4.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/ligWXLbDvDeG/oDY82Xc6cIDK.woff") format("woff");
+    font-display: swap;
+}
+
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --green: #93e070;
+    --purple: #be51cf;
+    --woodGray: #ccb8b8;
+    --red: #dc4848;
+    --winterBlue: #3f8cc0;
+    --nodeTitle: #3b61bd;
+    --tee: #9ba91e;
+    --gold: #daae0f;
+}
+
+
+.x-node::before {
+    content: attr(title) ' ';
+    display: block;
+    border-top-left-radius: .75em;
+    border-top-right-radius: .75em;
+    color: #eac966;
+    padding: 0.1em .3em 0em;
+    margin: -.1em -.3em 0.2em;
+}
+
+.x-node.nodeTitle::before {
+    background-color: var(--nodeTitle);
+}
+
+.x-node.purple::before {
+    background-color: var(--purple);
+}
+
+.x-node.winterBlue::before {
+    background-color: var(--winterBlue);
+}
+
+.x-node.green::before {
+    background-color: var(--green);
+}
+
+.x-node.woodGray::before {
+    background-color: var(--woodGray);
+}
+
+.x-node.white::before {
+    background-color: var(--white);
+}
+
+.x-node.tee::before {
+    background-color: var(--tee);
+}
+
+.x-node.gold::before {
+    background-color: var(--gold);
+}
+
+.x-node {
+    color: rgb(207 172 17);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(47, 58, 58);
+    border-radius: .75em;
+    display: inline-block;
+    padding: 0.1em 0.3em 0.25em;
+    position: absolute;
+    box-shadow: 2px 2px 10px rgb(55, 54, 54);
+    white-space: normal;
+}
+
+.x-connection:after {
+    position: absolute;
+    border: solid 1px #dedede;
+    background-color: #2e2e2e;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.5em;
+}
+
+.x-connection.linked:after {
+    border: solid 1px transparent;
+    background-color: #aeaeae;
+}
+
+.x-connection:hover:after {
+    border-color: red;
+}
+
+.x-connection , .x-input{
+    width: 100%;
+    position: relative;
+    padding-right: 0.5em;
+    cursor: pointer;
+}
+
+.x-connection:after {
+    content: "";
+    right: 0em;
+    top: 0.25em;
+}
+
+.x-input {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    cursor: default;
+    /* font-family: "阿里妈妈灵动体 VF Thin"; */
+    font-weight: 205;
+    font-stretch: condensed;
+    font-style: italic;
+    font-size: small;
+}
+
+.x-input input {
+    width: 5ch;
+}
+
+.x-input.empty {
+    padding: 0 0 0.2rem;
+}
+
+.x-span {
+    position: relative;
+    left: -0.5em;
+    /* top: 0.5em; */
+    cursor: pointer;
+    /* border: solid 1px #dedede; */
+    border: 0.1rem double #32a1ce;
+    border-radius: 0.2em;
+    color: #32a1ce;
+}
+
+.x-output.attached>.x-span {
+    border: solid 1px transparent;
+    color: brown;
+}
+
+.x-output>.x-span:hover {
+    /* color: brown; */
+    border: 0.2rem double rgb(82, 178, 238);
+    border-radius: 0.1em;
+}
+
+.inlayout {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+}
+.x-span-text {
+    text-wrap: nowrap;
+}
+
+#nodeGraph {
+    background-image: linear-gradient(to bottom, #e4e1af 18px, #eaddcd 20px);
+    /* linear-gradient(to right, transparent 18px, #5f5c58 20px) */
+    background-size: 20px 20px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:-100;
+    width:150%;
+    height:150%;
+}

@@ -1,0 +1,210 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+    <title>www.jb51.net JS拖动选择table里的单元格</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <style>
+        .table-container {
+            width: 100%;
+            overflow-y: auto;
+            _overflow: auto;
+            margin: 0 0 1em;
+            background-color: white;
+        }
+        table {
+            border: 0;
+            border-collapse: collapse;
+        }
+        table td, table th {
+            border: 1px solid #999;
+            padding: .5em 1em;
+        }
+        /*对齐*/
+        .table-time div {
+            text-align: center;
+            min-width: 104px;
+        }
+
+        .table-time, tr th {
+            background-color: #DBE5F1;
+        }
+
+        .div-ISelect {
+            background-color: #FBD4B4;
+        }
+
+        /*图例*/
+        ul li {
+            list-style: none;
+            float: left;
+        }
+
+        .table-container td {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function () {
+            initForm();
+        })
+        //by baojian
+        var firstindexrow;
+        var firstindexcol;
+        var curindexrow;
+        var curindexcol;
+        function initForm() {
+
+            var isMouseDown = false,
+                isHighlighted
+            //添加点击事件
+            $(".select").mousedown(function () {
+                isMouseDown = true;
+                var currentTD = $(this);
+                $("tr:gt(0) td").each(function(i){
+                    $(this).removeClass('div-ISelect');
+                })
+                firstindexrow = currentTD.parent().index();
+                firstindexcol=currentTD.index();
+                curindexrow = currentTD.parent().index();
+                curindexcol = currentTD.index();
+                $("tr:eq("+curindexrow+") td:eq("+curindexcol+")").addClass("div-ISelect");
+                return false;
+            }).mouseenter(function (e) {
+                if (isMouseDown) {
+                    var currentTD = $(this);
+                    $("tr:gt(0) td").each(function(i){
+                        $(this).removeClass('div-ISelect');
+                    })
+                    curindexrow = currentTD.parent().index();
+                    curindexcol = currentTD.index();
+                    var minrow = curindexrow>firstindexrow?firstindexrow:curindexrow;
+                    var mincol = curindexcol>firstindexcol?firstindexcol:curindexcol;
+                    var maxrow = curindexrow>firstindexrow?curindexrow:firstindexrow;
+                    var maxcol = curindexcol>firstindexcol?curindexcol:firstindexcol;
+                    for(var i=minrow;i<=maxrow;i++){
+                        for(var j=mincol;j<=maxcol;j++){
+                            $("tr:eq("+i+") td:eq("+j+")").addClass("div-ISelect");
+                        }
+                    }
+                }
+            });
+            $(document).mouseup(function () {
+                    isMouseDown = false;
+                });
+        }
+    </script>
+</head>
+<body>
+    <div class="table-title"></div>
+    <div class="table-container">
+        <table>
+            <caption>我是表格标题</caption>
+            <tbody>
+            <tr>
+                <th></th>
+                <th class="table-week"><span>周一</span></th>
+                <th class="table-week"><span>周二</span></th>
+                <th class="table-week"><span>周三</span></th>
+                <th class="table-week"><span>周四</span></th>
+                <th class="table-week"><span>周五</span></th>
+                <th class="table-week"><span>周六</span></th>
+                <th class="table-week"><span>周日</span></th>
+            </tr>
+            <tr>
+                <td>第一行</td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+            </tr>
+            <tr>
+                <td>第二行</td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+            </tr>
+            <tr>
+                <td>第三行</td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+                <td class='select'>
+                    <div count='1'>已约：1人</div>
+                    <div class='div-right'>√</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

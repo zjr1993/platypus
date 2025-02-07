@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>upload data</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="upload-data">
+        <div class="form">
+            <form class="upload-form">
+                <input type="text" id="database" placeholder="数据库" />
+                <input type="text" id="collection" placeholder="文档集" />
+                <select id="pOw">
+                    <option value="1">
+                        当前工作表
+                    </option>
+                    <option value="2">
+                        整个工作簿
+                    </option>
+                </select>
+                <button onclick="optDB()">确认</button>
+                <!-- <p class="message">还未注册<a href="#">创建一个账户</a></p> -->
+            </form>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

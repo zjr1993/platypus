@@ -1,0 +1,32 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnAddinLoad">
+	<ribbon startFromScratch="false">
+		<tabs>
+			<tab id="zjjg" label="0#台账助手">
+				<group id="g1">
+					<!-- 配置数据库 getVisible="true" -->
+					<button id="config" label="连接数据库" onAction="ClickBtn" getImage="GetImageBtn" size="large"/>
+					<separator id="s1" />
+					
+					<box boxStyle="vertical"  getVisible="IsElemVisible">
+						<!-- 上传数据到数据库 -->
+						<button id="upload" getEnabled="OnGetEnabled" label="配置数据库" onAction="ClickBtn" getImage="GetImageBtn" size="large"/>
+						<!-- 从数据库下载数据 -->
+						<button id="download" getEnabled="OnGetEnabled" label="上传数据" onAction="ClickBtn" getImage="GetImageBtn" size="large"/>
+					</box>
+				</group>
+				<group id="g2">
+					<button id="convert" label="组分分析" onAction="ClickBtn"  getImage="GetImageBtn" size="large"/>
+					<separator id="s2" />
+					<menu id="calculate" label="算量表格" getImage="GetImageCtl" itemSize="large" size="large">
+						<!-- 插入算量表格 -->
+						<button id="calcTable" label="钢筋汇总表"   onAction="ClickBtn" getImage="GetImageBtn"/>
+						<button id="calcTableEx" label="混凝土汇总表" onAction="ClickBtn" getImage="GetImageBtn"/>
+						<menuSeparator id="s3" />
+						<!-- 汇总计算数据 -->
+						<button id="gather" label="汇总数据"     onAction="ClickBtn" getImage="GetImageBtn"/>
+					</menu>
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>

@@ -1,0 +1,55 @@
+/*some layout*/
+
+.layout {
+    /* width: 1366px;
+    height: 768px; */
+  
+    display: grid;
+    grid:
+      "graph tooltip" 1fr
+      / 30% 1fr;
+    gap: 8px;
+  }
+  
+  .graph { grid-area: graph;
+    border:  3px solid rgb(135, 216, 199); }
+  .tooltip { grid-area: tooltip; border:  3px solid rgb(141, 202, 224);}
+
+
+/* Context Menu */
+#ctx_menu{
+  position: absolute;
+  display: inline-block;
+  z-index: 400000;
+  font-family: sans-serif;
+}
+#ctx_menu ul{
+  position: relative;
+  list-style-type: none;
+  list-style-position: inside;
+  border: solid 1px #6e6e6e;
+  padding-left: 0;
+  background-color: #4e4e4e;
+  color: #dedede;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 2px 2px 10px black;
+}
+#ctx_menu li{
+  position: relative;
+  padding: 0 5px;
+  border-bottom: solid 1px #6e6e6e;
+  white-space: nowrap;
+}
+#ctx_menu ul ul{
+  display: none;
+}
+#ctx_menu li:hover {
+  background-color: #5e5e5e;
+}
+#ctx_menu li:hover ul{
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>connect server</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <input type="text" id="name_new" placeholder="用户名" />
+                <input type="password" id="psword_new" placeholder="密码" />
+                <!-- 选择默认仓库, 若不存在则创建一个, 非管理员只能创建一个私人仓库 -->
+                <!-- 管理员账号可以创建若干公共仓库，可以用空格隔开 -->
+                <input type="text" id="storage" placeholder="仓库名" />
+
+                <button onclick="register()">创建账户</button>
+                <p class="message">已经拥有账户！<a href="#">登录</a></p>
+            </form>
+            <form class="login-form">
+                <input type="text" id="name" placeholder="用户名" />
+                <input type="password" id="psword" placeholder="密码" />
+                <button onclick="connect()">连接</button>
+                <p class="message">还未注册<a href="#">创建一个账户</a></p>
+            </form>
+        </div>
+    </div>
+    <script src='./jquery.min.js'></script>
+    <script src="../../js/connect.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
