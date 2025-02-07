@@ -1,0 +1,16 @@
+{
+  "name": "wxhcq",
+  "version": "1.0.2",
+  "description": "a wps mongodb client",
+  "main": "WxHCq.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zjr",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.0.0",
+    "pug": "^3.0.2"
+  }
+}
